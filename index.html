@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="cookies.js"></script>
+    <script src="cookies_min.js"></script>
+  </head>
+  <body>
+    <div class="welcome">
+      <button id="logout">Log Out</button>
+      <img src="bomberbotlogo.png" id="logo">
+      <h1>Welcome Back!</h1>
+      <form name="signup" action="welcome.html">
+        <ul class="form-field">
+            <li class="form-field">
+              <label for="usermail">Email</label>
+              <input type="email" name="usermail" placeholder="YourName@email.com" id="address" required>
+            </li>
+            <br>
+            <li class="form-field"><label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" required></li>
+            <li class="form-field">
+              <br>
+            <input type="submit" value="Sign In" id="submitbutton"></li>
+        </ul>
+      </form>
+    </div>
+    <div class="actions">
+      <img src="playbutton.png">
+      <img src="helpbutton.png">
+    </div>
+   <script>
+
+$(document).ready(function () {
+  $('#submitbutton').click(function () {
+      var email = $('#address').val();
+        Cookies.set('emailaddress', email);
+  });
+
+  $('#logout').click(function () {
+    Cookies.set('emailaddress', 'email', {expires: -3600});
+    location.reload();
+    });
+
+      var cookie = Cookies.get('emailaddress');
+      console.log(cookie);
+      if (cookie !== undefined) {
+        $('h1').remove();
+        $('form').remove();
+        $('.welcome').append('<h2>Welcome back </h2>' + '<span>'+ cookie + "!" + '</span>');
+        $('#logout').show();
+      } else {
+        console.log("No email created");
+      }
+   });
+   </script>
+  </body>
+</html>

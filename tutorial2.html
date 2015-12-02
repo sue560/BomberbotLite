@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="robot.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <p class="back">Back</p>
+      <ul>
+        <li><a>Help</a></li>
+        <li><a>Next</a></li>
+      </ul>
+    </div>
+    <div class="explain">
+      <h2 id="title">Relative Directions</h2>
+      <h3>Click on the instructions below to see how Bomberbot moves!<br>See the code appear in the text editor.</h3>
+    </div>
+    <div class="robot-container">
+      <div class="robot2">
+        <div class="rotate-right">
+        </div>
+        <div class="instruction">
+          <img src="turnright.png" width="50px" height="50px" id="turn-right-button">
+        </div>
+      </div>
+      <div class="text-editor2">
+      </div>
+      <div class="next">
+      </div>
+    </div>
+    <script>
+    
+    $(document).ready(function () {
+    $('#move-forward-button').click(function() {
+      console.log('button clicked');
+      function walkForward() {
+        $('.walk-forward').remove();
+        $('.walk-forward').addClass('active');
+        $(".text-editor").append("<p>Walk 1 Step Forward</p>");
+       };
+    
+    $('#turn-right-button').click(function() {
+        $('.rotate-right').toggleClass('active');
+        $(".text-editor2").append("<p>Rotate Right</p>");
+       });
+  });
+
+
+    </script>
+  </body>
+</html>

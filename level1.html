@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="robot.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <p class="back">Back</p>
+      <ul>
+        <li><a>Next Level</a></li>
+      </ul>
+    </div>
+    <div class="field">
+      <table>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <img src="bot_2.png" id="movebot">
+    </div>
+    <div class="sidebar">
+      <div class="instructions">
+        <p>Level 1</p>
+        <h3>How to Play</h3>
+        <p id="instructions">Use the arrow keys on your keyboard or click the buttons below to move the robot to the star using the least number of steps possible.</p>
+        <img src="up.png" id="up" width="50px" class="arrow" onclick="countSteps()">
+        <img src="down.png" id="down" width="50px" class="arrow"><p></p>
+        <img src="left.png" id="left" width="50px" class="arrow">
+        <img src="right.png" id="right" width="50px" class="arrow">
+      </div>
+      <div class="count">
+        <h3>Total Steps:</h3>
+        <p id="number"></p>
+      </div>
+    </div>
+  </body>
+</html>
