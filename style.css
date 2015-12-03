@@ -58,8 +58,8 @@ h1 {
 }
 
 h2 {
-  padding: 10px;
   padding-bottom: 0px;
+  padding-top: 0px;
   font-size: 24px;
   color: white;
 }
@@ -73,12 +73,14 @@ h3 {
 .explain {
   position: absolute;
   top: 15%;
-  left: 23%;
+  text-align: center;
+  width: 768px;
 }
 
 #title {
   color: black;
   text-align: center;
+  margin-top: 8px;
 }
 span {
   color: white;
@@ -213,8 +215,9 @@ input {
   position: absolute;
   width: 600px;
   height: auto;
-  left: 27%;
-  top: 33%;
+  left: 29%;
+  top: 37%;
+  padding: 0;
 }
 
 .robot {
@@ -257,6 +260,12 @@ input {
 .text-editor p, .text-editor2 p {
   font-family: 'Courier';
   padding-left: 30px;
+}
+
+.thisbutton {
+  float: center;
+  margin-top: 10px;
+  padding: 0;
 }
 
 #move-forward-button {
@@ -305,11 +314,16 @@ input {
   background: url("rotate_right.png");
 }
 
-.rotate-right-first {
-  width: 125px;
-  height: 192px;
-  padding-left: 0px;
-  background: url('rotateright1.png');
+.rotate-right.active {
+  animation: play 1s steps(4);
+  -webkit-animation: play 1s steps(4);
+  -o-animation: play 1s steps(4);
+}
+
+@keyframes play {
+  100% {
+    background-position: -500px;
+  }
 }
 
 #movebot {
