@@ -1,13 +1,12 @@
 body {
   width: 768px;
   height: 680px;
-  border: solid black 3px;
-  border-radius: 10px;
+  border: solid black 10px;
+  border-radius: 20px;
   margin: 0 auto;
   margin-top: 8px;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
 
 /*fonts*/
 
@@ -26,6 +25,7 @@ body {
   height: 580px;
   overflow: hidden;
   text-align: center;
+  border-radius: 10px;
 }
 
 #avatar {

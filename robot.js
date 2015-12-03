@@ -137,6 +137,11 @@ $(document).ready(function () {
       if (yPos > 400) {
       $('#movebot').stop(true);
     }
+        var xPos = $("#movebot").position().left;
+        if ((xPos > 700) && (yPos > 400)) {
+        $('#burgerbox').css('background-image', 'none');
+        alert('you won!');
+      }
   });
 
   $('#left').click(function () {
