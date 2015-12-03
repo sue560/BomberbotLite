@@ -28,17 +28,26 @@ body {
   text-align: center;
 }
 
-#logout {
+#avatar {
   position: absolute;
-  top: 5%;
-  right: 5%;
-  width: 80px;
-  height: 30px;
-  border: white 2px solid;
-  background-color: #01af94;
-  border-radius: 5px;
-  color: white;
+  top: 0%;
+  right: 3%;
+  width: 100px;
+  height: 120px;
+  background-image: url('bothead.png');
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: 15px 0;
   display: none;
+}
+
+
+#username {
+  position: absolute;
+  bottom: 10%;
+  height: auto;
+  color: white;
+  font-size: 12px;
 }
 
 h1 {
@@ -88,6 +97,8 @@ table {
   width: 600px;
   height: 600px;
   float: right;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
 td, tr {
@@ -95,6 +106,9 @@ td, tr {
   margin: 0;
 }
 
+tr {
+  height: 50px;
+}
 /*form*/
 
 form {
@@ -107,7 +121,7 @@ form {
 .form-field {
   text-align: left;
   margin-bottom: 10px;
-  left: 20%;
+  left: 10%;
 }
 
 li {
@@ -116,7 +130,7 @@ li {
 }
 
 label {
-  font-size: 18px;
+  font-size: 24px;
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
   display: inline-block;
@@ -130,19 +144,47 @@ input {
   margin-bottom: 10px;
 }
 
-#submitbutton {
-  width: 100px;
+.play-buttons {
+  margin: 0 auto;
   position: absolute;
-  left: 30%;
+  width: 100%;
+  float: center;
+  margin-top: 20px;
+  display: none;
+}
+
+#logout-button, #help, #playnow {
+  cursor: pointer;
+}
+
+#logout-button:hover, #playnow:hover, #help:hover {
+  transform: translate(3px, 3px);
+}
+
+#submitbutton {
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  left: 35%;
+  font-size: 18px;
+  font-style: bold;
   margin: 10px;
   color: white;
   background-color: #01af94;
-  border: white solid 2px;
+  border: white solid 3px;
 
 }
 
 #address {
-  width: 233px;
+  width: 300px;
+}
+
+#password {
+  width: 255px;
+}
+
+#lite {
+  margin-top: -20px;
 }
 
 .play {
@@ -155,10 +197,16 @@ input {
 }
 
 #logo {
-  width: 50%;
+  width: 60%;
   height: auto;
-  margin: -10px;
-  margin-top: 2px;
+  margin-top: 80px;
+}
+
+#headlogo {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  width: 20%;
 }
 
 .robot-container {
@@ -305,7 +353,7 @@ ul li {
   padding-left: 20px;
   position: absolute;
   font-size: 18px;
-  top: 6%;
+  top: 30%;
   font-family: 'Open Sans', sans-serif;
   color: white;
   font-weight: bold;
@@ -336,9 +384,14 @@ ul li {
   margin: 0px;
 }
 
+.arrow:hover {
+  transform: scale(1.2);
+}
+
 .count {
   text-align: center;
 }
+
 #number {
   display: inline-block;
   text-align: center;
@@ -348,8 +401,36 @@ ul li {
   margin: 0 auto;
 }
 
+#burgerbox {
+  background-image: url('burger.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0px -20px;
+  animation: burgeranimate 1s infinite;
+}
 
+@keyframes burgeranimate {
+  from { 
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
+    transform: scale(.8); 
+  }
+  to { 
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
 
+#downexit {
+  position: absolute;
+  bottom: 5%;
+  left: 35%;
+}
 
 
 

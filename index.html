@@ -8,10 +8,19 @@
   </head>
   <body>
     <div class="welcome">
-      <button id="logout">Log Out</button>
+      <div id="avatar">
+        <div id="username"></div>
+      </div>
+      <img src="headlogo.png" id="headlogo">
       <img src="bomberbotlogo.png" id="logo">
-      <h1>Welcome Back!</h1>
-      <form name="signup" action="welcome.html">
+      <img src="lite.png" width="40%" id="lite">
+      <h1></h1>
+      <div class="play-buttons">
+        <img src="logout.png" id="logout-button">
+        <a href="tutorial.html"><img src="helpbutton.png" id="help"></a>
+        <a href="level1.html"><img src="playbutton.png" id="playnow"></a>
+      </div>
+      <form name="signup" action="index.html">
         <ul class="form-field">
             <li class="form-field">
               <label for="usermail">Email</label>
@@ -19,16 +28,12 @@
             </li>
             <br>
             <li class="form-field"><label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" required></li>
+            <input type="password" name="password" placeholder="Password" id="password" required></li>
             <li class="form-field">
               <br>
             <input type="submit" value="Sign In" id="submitbutton"></li>
         </ul>
       </form>
-    </div>
-    <div class="actions">
-      <img src="playbutton.png">
-      <img src="helpbutton.png">
     </div>
    <script>
 
@@ -38,7 +43,7 @@ $(document).ready(function () {
         Cookies.set('emailaddress', email);
   });
 
-  $('#logout').click(function () {
+  $('#logout-button').click(function () {
     Cookies.set('emailaddress', 'email', {expires: -3600});
     location.reload();
     });
@@ -48,8 +53,10 @@ $(document).ready(function () {
       if (cookie !== undefined) {
         $('h1').remove();
         $('form').remove();
-        $('.welcome').append('<h2>Welcome back </h2>' + '<span>'+ cookie + "!" + '</span>');
-        $('#logout').show();
+        $('#username').append(cookie);
+        $('#avatar').show();
+        $('.play-buttons').show();
+
       } else {
         console.log("No email created");
       }
