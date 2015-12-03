@@ -153,7 +153,7 @@ input {
   display: none;
 }
 
-#logout-button, #help, #playnow {
+#logout-button, #help, #playnow, #move-forward-button {
   cursor: pointer;
 }
 
@@ -305,16 +305,11 @@ input {
   background: url("rotate_right.png");
 }
 
-.rotate-right.active {
-  animation: play 1s steps(4);
-  -webkit-animation: play 1s steps(4);
-  -o-animation: play 1s steps(4);
-}
-
-@keyframes play {
-  100% {
-    background-position: -500px;
-  }
+.rotate-right-first {
+  width: 125px;
+  height: 192px;
+  padding-left: 0px;
+  background: url('rotateright1.png');
 }
 
 #movebot {
@@ -345,7 +340,7 @@ ul li {
   padding: 20px;
   font-family: 'Open Sans', sans-serif;
   color: white;
-  font-weight: bold;
+  font-weight:move-forward-button bold;
 }
 
 .back {
@@ -385,6 +380,10 @@ ul li {
 }
 
 .arrow:hover {
+  transform: scale(1.2);
+}
+
+#move-forward-button:hover {
   transform: scale(1.2);
 }
 

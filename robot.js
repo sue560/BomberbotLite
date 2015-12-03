@@ -1,9 +1,46 @@
 $(document).ready(function () {
+  
   var count=0;
+
+  // display and record times clicked (turn right)
   $('#turn-right-button').click(function () {
     count++;
     $('.numberClicksTurn').text(count);
   });
+
+  // display and record times clicked (move forward)
+  $('#move-forward-button').click(function () {
+      count++;
+      $('.numberClicks').text(count);
+      $('.text-editor').append("<p>Walk 1 Step Forward</p>");
+  });
+
+  // animates robot for number of times clicked
+  $('.play').click(function () {
+    animateRobot(count);
+  });
+
+// repeat the move
+    function animateRobot(count) {
+    console.log("Count: " + count);
+    if (count === 0) {
+      console.log("Returning!");
+      return
+    }
+    $('.walk-forward').addClass('active');
+    $('.walk-forward').on('animationend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function () {
+      var robotWalk = $('.walk-forward').clone().removeClass('active');
+      $('.walk-forward').remove();
+      $('.robot').prepend(robotWalk);
+      // $('.walk-forward').addClass('active');
+      console.log("Finished animation!");
+      // $('.walk-forward').removeClass('active');
+      animateRobot(count-1);
+    });
+    $('.rotate-right').addClass('active');
+  }
+
+// LEVEL #1 
 
 // record total steps
   var steps=0;
@@ -127,18 +164,8 @@ $(document).ready(function () {
       $('#movebot').stop(true);
     }
   });
-  $('#move-forward-button').click(function() {
-        $('.walk-forward').toggleClass('active'), 
-        $('.text-editor').append("<p>Walk 1 Step Forward</p>");
-    });
-    
-    $('#turn-right-button').click(function() {
-        $('.rotate-right').toggleClass('active');
-        $(".text-editor2").append("<p>Rotate Right</p>");
-       });
-  });
-;
-//document ready
+});
+
 
 
 
